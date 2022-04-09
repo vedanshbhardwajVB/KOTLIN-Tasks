@@ -30,4 +30,7 @@ fun main(){
 
     println(text)
 
+    val char : Char = 'e'
+    println("The letter is $char ")
+
 }
