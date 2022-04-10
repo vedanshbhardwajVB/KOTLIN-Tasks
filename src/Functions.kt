@@ -1,4 +1,4 @@
-import java.lang.System.`in`
+
 import java.util.*
 
 // Used functions normally
@@ -6,7 +6,7 @@ import java.util.*
 // And also with default parameters
 const val FEE = 30000
 fun main(){
-    var sc= Scanner(`in`)
+    var sc= Scanner(System.`in`)
     println("Enter student name .....")
     var name = readLine()
     println("Enter your marks ....")
@@ -26,11 +26,10 @@ fun main(){
 }
 
 fun calculateFees(scholarship: Double, concession : Int = 0) : Double {
-    var fee = FEE - ((scholarship/100)*FEE)
+    var fee = FEE - ((scholarship / 100) * FEE)
     println(fee)
-    return fee-concession
+    return fee - concession
 }
-
 fun calculateScholarship(marks: Int) = if(marks in 90 until 95){
                                                  println("You get a decent scholarship !")
                                                    80.0
