@@ -4,6 +4,8 @@ fun main(){
     var number3 : Long
     var number4 : Double
     var isKotlinGood : Boolean
+    var floatNumber  = 1
+
 
     isKotlinGood=false
     println("Kotlin is actually good. ${!isKotlinGood}")

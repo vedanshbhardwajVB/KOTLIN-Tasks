@@ -24,11 +24,13 @@ fun Notebook.addPages(morePages : Int){
 
 //Infix Function.......
 //      -> Must be either a member or an extension function
+//      -> Must have a single parameter, that too with no default values
 infix fun Notebook.addP (n : Notebook) : Int{
     return this.pages + n.pages
 }
 //Operator Overloading.......
 //      -> Must be either a member or an extension function
+//      -> Must have a single parameter, that too with no default values
 operator fun Notebook.plus (n : Notebook) : String {
     return this.company+n.company
 }

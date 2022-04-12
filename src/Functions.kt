@@ -5,45 +5,49 @@ import java.util.*
 // And also as an expression
 // And also with default parameters
 const val FEE = 30000
+class StudentResult(var name : String, var marks: Int, var scholarship : Double = 0.0) {
+
+    fun calculateScholarship() =  if(this.marks in 90 until 95){
+        println("You get a decent scholarship !")
+        80.0
+    }
+    else if (this.marks in 95..100){
+        println("You got a good scholarship !")
+        90.0
+    }
+    else{
+        println("You could not get any scholarship")
+        0.0
+    }
+
+    fun checkIfPass() : Boolean{
+        return this.marks>60
+    }
+
+    fun calculateFees(concession : Int = 0) : Double {
+        var fee = FEE - ((scholarship / 100) * FEE)
+        println(fee)
+        return fee - concession
+    }
+}
 fun main(){
-    var sc= Scanner(System.`in`)
+    val sc= Scanner(System.`in`)
     println("Enter student name .....")
-    var name = readLine()
+    val name = sc.next()
     println("Enter your marks ....")
-    var marks = sc.nextInt()
-    var scholarship : Double = 0.0
-    if(checkIfPass(marks)){
-        scholarship = calculateScholarship(marks)
-        println("$name you got $scholarship percentage of scholarship")
+    val marks = sc.nextInt()
+
+    var stdobj = StudentResult(name, marks)
+
+    if(stdobj.checkIfPass()){
+        println("$name you got ${stdobj.calculateScholarship()} percentage of scholarship")
     }
 
     else
         println("$name you failed this examination")
-    println(scholarship)
-    var fee = calculateFees(scholarship)
-
-    println("$name fees is calculated to be $fee")
+    println(stdobj.scholarship)
+    val fee = stdobj.calculateFees()
+    println("$name fees is calculated to be $fee after considering the concession")
 }
 
-fun calculateFees(scholarship: Double, concession : Int = 0) : Double {
-    var fee = FEE - ((scholarship / 100) * FEE)
-    println(fee)
-    return fee - concession
-}
-fun calculateScholarship(marks: Int) = if(marks in 90 until 95){
-                                                 println("You get a decent scholarship !")
-                                                   80.0
-                                                }
-                                               else if (marks in 95..100){
-                                                   println("You got a good scholarship !")
-                                                    90.0
-                                               }
-                                                else{
-                                                    println("You could not get any scholarship")
-                                                    0.0
-                                                }
-
-fun checkIfPass(marks: Int) : Boolean{
-    return marks>60
-}
 

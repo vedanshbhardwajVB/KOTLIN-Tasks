@@ -1,17 +1,19 @@
-import kotlin.jvm.JvmStatic
+public class Calculations {
+    public static void main(String [] args){
+        CalculationsKotlin ckt = new CalculationsKotlin();
+        ckt.sayHelloFromKotlin();
+        ckt.subtract(50, 25);
 
-object Calculations {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        sayHelloFromKotlin()
-        println(subtract(100, 50))
+//    CalculationsKotlin.sayHelloFromKotlin();
+//    System.out.println(CalculationsKotlin.subtract(100, 50));
     }
 
-    fun sayHelloFromJava() {
-        println("Hello Kotlin file - I'm from JAVA ")
+    public static void sayHelloFromJava(){
+        System.out.println("Hello Kotlin file - I'm from JAVA ");
     }
 
-    fun add(a: Int, b: Int): String {
-        return "Java file subtracting.... Answer is " + (a + b)
+    public static String add(int a, int b){
+        return ("Java file subtracting.... Answer is "+(a+b));
     }
 }
+

@@ -36,8 +36,4 @@ fun main(){
     var num : Int = char.toInt()
     println(num)
 
-
-
-
-
 }
