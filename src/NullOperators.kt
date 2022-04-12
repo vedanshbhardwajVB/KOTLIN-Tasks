@@ -15,9 +15,6 @@ class Name(val name : String?){
 
         return name!!.length >= 8
     }
-
-
-
 }
 
 fun main() {
