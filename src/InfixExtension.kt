@@ -2,11 +2,16 @@ fun main (){
     var nb = Notebook("Classmate",  50, true)
     println(nb)
     println("________________________________________________________________")
-    nb.addPages(250)
+
+
+    //use with to be able to use an Extension Function as a member function of a class
+    with(Test()) {
+        nb.addPages(250)
+    }
+
     println("After adding pages through extension function")
     println(nb)
     println("________________________________________________________________")
-
     var nb1 = Notebook("Nova", 1000, true)
     println("Combined Pages in Notebook 1 and 2 -:> ${nb addP nb1}")
     println("________________________________________________________________")
@@ -18,8 +23,10 @@ fun main (){
 }
 
 //Extension Function.....
-fun Notebook.addPages(morePages : Int){
-    this.pages+=morePages
+class Test {
+    fun Notebook.addPages(morePages : Int){
+        this.pages+=morePages
+    }
 }
 
 //Infix Function.......
@@ -31,6 +38,6 @@ infix fun Notebook.addP (n : Notebook) : Int{
 //Operator Overloading.......
 //      -> Must be either a member or an extension function
 //      -> Must have a single parameter, that too with no default values
-operator fun Notebook.plus (n : Notebook) : String {
+infix operator fun Notebook.plus (n : Notebook) : String {
     return this.company+n.company
 }

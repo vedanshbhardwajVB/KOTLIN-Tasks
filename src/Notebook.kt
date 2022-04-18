@@ -7,7 +7,7 @@ class Notebook constructor (var company : String, var price : Int=30){ // declar
         println("$company notebook costs, Rs $price")
     }
 
-    constructor( price: Int, company: String, p : Int) : this( company, price){
+    constructor( price: Int, company: String, p : Int)  : this(company, price){
         println("Inside the constructor number 1")
         this.pages=p
     }

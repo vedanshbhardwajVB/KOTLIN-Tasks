@@ -4,18 +4,18 @@ fun main() {
 
     val m = checkMagnitude(a,b)
 
-    when (m) {
-        0 -> {
+    when  {
+        m is Int  -> {
             println("m is equal to 0")
             println("Magnitude is same")
         }
-        in 50..100 -> println("Difference is there by a good margin")
+        m in 50 until 100  -> println("Difference is there by a good margin")
         else -> println("Negligible difference")
     }
 }
 
 fun checkMagnitude(a : Int, b: Int) : Int{
-    val max = if(a>b) {
+    val max = if( a>b ) {
         println("A is bigger")
         a
     }

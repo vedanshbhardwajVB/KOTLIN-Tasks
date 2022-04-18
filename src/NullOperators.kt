@@ -1,12 +1,14 @@
 class Name(val name : String?){
-    fun checkUserNameCompatibility() : Boolean{
+    fun checkUserNameCompatibility() {
         //finds the name compatible if the name is not null and is of size 2 at least, return true or false
         // safe call with let {} block
+
         name?.let {
-            if(name.length >= 2)
-                return true
+            println("Inside .let block")
+        } ?: run {
+            println("Inside run block")
         }
-        return false
+
     }
 
     fun checkNameAsAPasswordCompatibility() : Boolean {
@@ -19,8 +21,8 @@ class Name(val name : String?){
 
 fun main() {
     println("Enter your name ")
-    //var name  = readLine()
-    var name : String? = null
+    var name  = readLine()
+//    var name : String? = null
     if (name?.length == null)
         println("Your name is null, code is still in the main() function !!")
     else

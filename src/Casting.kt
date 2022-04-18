@@ -33,7 +33,10 @@ fun main(){
     println(int)
 
     var char = 'a'
-    var num : Int = char.toInt()
+    var num : Int = Character.getNumericValue(char)
+    println(char.code) //used to get ascii value of the char
+    var numFromToInt : Int = char.toInt()
     println(num)
+    println(numFromToInt)
 
 }

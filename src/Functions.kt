@@ -4,12 +4,13 @@ import java.util.*
 // Used functions normally
 // And also as an expression
 // And also with default parameters
+
 const val FEE = 30000
 class StudentResult(var name : String, var marks: Int, var scholarship : Double = 0.0) {
 
     fun calculateScholarship() =  if(this.marks in 90 until 95){
-        println("You get a decent scholarship !")
         80.0
+        println("You get a decent scholarship !")
     }
     else if (this.marks in 95..100){
         println("You got a good scholarship !")
@@ -23,6 +24,7 @@ class StudentResult(var name : String, var marks: Int, var scholarship : Double 
     fun checkIfPass() : Boolean{
         return this.marks>60
     }
+
 
     fun calculateFees(concession : Int = 0) : Double {
         var fee = FEE - ((scholarship / 100) * FEE)

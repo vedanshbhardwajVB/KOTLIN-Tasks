@@ -7,7 +7,6 @@ sealed class Consumer(val id : Int){
 
     class Admin (id : Int, var canModifyUserRights : Boolean = true, val permDiscount: Int = 100) : Consumer(id){
     }
-
     fun getDetails() {
         when(this) {
             is RegularUser -> {
