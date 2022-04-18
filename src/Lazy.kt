@@ -1,7 +1,7 @@
 import java.util.*
 
 class Light {
-    val heavyInstance : Heavy by lazy{
+    private val heavyInstance : Heavy by lazy{
         val sc = Scanner(System.`in`)
         println("Enter name ")
         val name = sc.nextLine()
@@ -12,11 +12,18 @@ class Light {
 
     fun heavyDetails(){
         println(heavyInstance)
+        println(heavyInstance.display())
     }
 }
 
 class Heavy (var heavyName : String, var heavyId : Int) {
-    override fun toString(): String {
+     fun display(): String {
         return "$heavyName -> $heavyId"
     }
+}
+
+fun main () {
+    val lightObject = Light()
+    lightObject.heavyDetails()
+    lightObject.heavyDetails()
 }
